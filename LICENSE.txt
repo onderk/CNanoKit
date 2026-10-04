@@ -1,0 +1,23 @@
+CNanoKit - Freeware Licence
+Copyright (c) 2026 okmn. All rights reserved.
+
+1. You may download, install and use CNanoKit free of charge, for private
+   and commercial work.
+2. You may share the UNMODIFIED download package (the release zip, as
+   published by the author) free of charge, with this licence included.
+3. You may NOT modify, translate, decompile or reverse-engineer CNanoKit,
+   and you may NOT distribute modified versions or parts of it, or include
+   it in another product, without written permission from the author.
+4. You may NOT sell CNanoKit or charge for it.
+5. The example programs (examples\*.bas) may be freely changed and used as
+   a starting point for your own programs.
+6. NO WARRANTY. CNanoKit is provided "as is". The author is not liable for
+   any damage to hardware, software or data, or any other loss, arising from
+   its use. Use it at your own risk.
+
+Third-party tools it calls (not included, installed separately under their
+own licences): Microchip pymcuprog (MIT), Microchip device packs
+(Apache-2.0), Positron8 / Positron Studio / Proton IDE (their authors),
+VS Code and the "Positron" extension (their authors).
+
+Contact: protoncompiler.com forum, user okmn.
