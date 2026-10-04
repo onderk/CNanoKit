@@ -21,16 +21,29 @@ Windows 10/11 64-bit · Positron8 4.0.6.4 · one IDE: Positron Studio 2.1.0.4 / 
 Step by step: [docs/NEW_PC_SETUP_EN_02102026_1240.md](docs/NEW_PC_SETUP_EN_02102026_1240.md) · full guide: [docs/INSTALL_EN_01102026_2030.md](docs/INSTALL_EN_01102026_2030.md)
 
 ## Videos (English captions)
-| | HELLO | HELLO_NOLED | KOMUT |
+
+### 1 · CNanoKit – for everyone (start here)
+Pick your IDE and watch top to bottom: **HELLO** first (checks your setup), then **HELLO_NOLED** (text only), then **KOMUT** (PC → PIC commands).
+
+| Order | Positron Studio | Proton IDE | VS Code |
 |---|---|---|---|
-| Positron Studio | [▶](https://youtu.be/5oV3hNFtrQQ) | [▶](https://youtu.be/Fr_1ISsT9pI) | [▶](https://youtu.be/_-PZj2wlwPs) |
-| Proton IDE | [▶](https://youtu.be/HoQPmnRP7GU) | [▶](https://youtu.be/7u8eBAA3DyQ) | [▶](https://youtu.be/cnKvcF5cFHo) |
-| VS Code | [▶](https://youtu.be/9kIeRDDFuoc) | [▶](https://youtu.be/gBkqgx5eyXM) | [▶](https://youtu.be/dkm4jyVHdmw) |
+| 1 · HELLO – compile, program, monitor | [▶ watch](https://youtu.be/5oV3hNFtrQQ) | [▶ watch](https://youtu.be/HoQPmnRP7GU) | [▶ watch](https://youtu.be/9kIeRDDFuoc) |
+| 2 · HELLO_NOLED – text only | [▶ watch](https://youtu.be/Fr_1ISsT9pI) | [▶ watch](https://youtu.be/7u8eBAA3DyQ) | [▶ watch](https://youtu.be/gBkqgx5eyXM) |
+| 3 · KOMUT – control the PIC from the PC | [▶ watch](https://youtu.be/_-PZj2wlwPs) | [▶ watch](https://youtu.be/cnKvcF5cFHo) | [▶ watch](https://youtu.be/dkm4jyVHdmw) |
 
-CNano Monitor tour: [▶](https://youtu.be/-UH7H_6zfKo)
+4 · **CNano Monitor tour** – Text/HEX view, quick buttons, Reset PIC (same in every IDE): [▶ watch](https://youtu.be/-UH7H_6zfKo)
 
-## JonW's mwboot bootloader on this kit
-JonW's free FREELOADER/mwboot bootloader also runs on this kit (two wires, separate from CNanoKit). Notes: [docs/JonW_mwboot_on_Curiosity_Nano_EN_03102026_1910.md](docs/JonW_mwboot_on_Curiosity_Nano_EN_03102026_1910.md)
+### 2 · JonW's mwboot bootloader on this kit (tests – separate from CNanoKit)
+JonW's free FREELOADER/mwboot bootloader also runs on this kit with two wires. Watch in order:
+
+| Part | Video |
+|---|---|
+| 1 · Upload an app through the bootloader | [▶ watch](https://youtu.be/DtCk0OLhyhg) |
+| 2 · Reading the whole chip back (R command) | [▶ watch](https://youtu.be/RV5UpDS18VI) |
+| 3 · Why FREELOADER 1.1 can't connect yet (DTR) | [▶ watch](https://youtu.be/Hw0ExDGAQg8) |
+| 4 · The test app on its own (no bootloader) | [▶ watch](https://youtu.be/YuMxKAdu_NI) |
+
+Notes: [docs/JonW_mwboot_on_Curiosity_Nano_EN_03102026_1910.md](docs/JonW_mwboot_on_Curiosity_Nano_EN_03102026_1910.md) · forum topic: https://protoncompiler.com/index.php/topic,3427.0.html
 
 ## Not included
 Breakpoint debugging (use MPLAB X for that). Other kits are not tested.
