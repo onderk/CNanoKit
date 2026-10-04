@@ -12,6 +12,12 @@ mwboot uses UART1 on RC6/RC7; the kit's USB-serial is on RB4/RB5.
 - Wire 2: **RB5 → RC7**
 RC7 is also LED0. With wire 2 fitted, your application must **never drive RC7** (it would fight the kit's USB-serial line). Use another pin for an LED, e.g. RD0 → 1 kΩ → LED → GND.
 
+![Wiring diagram: RC6 → RB4, RB5 → RC7](../images/Wiring_JonW_mwboot_TR_04102026_1815.png)
+
+![The two wires on the kit](../images/Kit_wiring_photo_04102026_1815.png)
+
+Diagram text is Turkish: "KABLO 1 (turuncu)" = wire 1 (orange), "KABLO 2 (mavi)" = wire 2 (blue), "sol/sağ sıra N. delik" = left/right row, hole N, counted from the USB end. Pinout drawing: Microchip Technology Inc. (DS50003481A); wires added by okmn.
+
 ## Putting the bootloader into the chip
 Program `P56Q71_MWBOOT.hex` once with CNanoKit (or any programmer). Note: programming the kit the normal way (F10 / Ctrl+Alt+M / debugger) erases the whole chip, **bootloader included** – program it again to get it back.
 

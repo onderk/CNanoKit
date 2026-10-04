@@ -34,7 +34,14 @@ Pick your IDE and watch top to bottom: **HELLO** first (checks your setup), then
 4 · **CNano Monitor tour** – Text/HEX view, quick buttons, Reset PIC (same in every IDE): [▶ watch](https://youtu.be/-UH7H_6zfKo)
 
 ### 2 · JonW's mwboot bootloader on this kit (tests – separate from CNanoKit)
-JonW's free FREELOADER/mwboot bootloader also runs on this kit with two wires. Watch in order:
+JonW's free FREELOADER/mwboot bootloader also runs on this kit with two wires. 
+**Wiring (only for JonW's bootloader – CNanoKit itself needs no wires):** wire 1 **RC6 → RB4**, wire 2 **RB5 → RC7**. Fit/remove the wires with USB unplugged. With wire 2 fitted, your program must never drive RC7 (LED0).
+
+<p><img src="images/Wiring_JonW_mwboot_TR_04102026_1815.png" alt="PIC18F56Q71 Curiosity Nano – wiring for JonW's mwboot: RC6 to RB4, RB5 to RC7" width="420"> <img src="images/Kit_wiring_photo_04102026_1815.png" alt="The two wires on the kit (breadboard)" width="260"></p>
+
+*Diagram text is Turkish: "KABLO 1 (turuncu)" = wire 1 (orange), "KABLO 2 (mavi)" = wire 2 (blue), "sol/sağ sıra N. delik" = left/right row, hole N (counted from the USB end). Pinout drawing: Microchip Technology Inc. (DS50003481A); wires added by okmn.*
+
+Watch in order:
 
 | Part | Video |
 |---|---|
