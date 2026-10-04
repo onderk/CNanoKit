@@ -2,7 +2,7 @@
 
 Compile, program and talk to Microchip's **PIC18F56Q71 Curiosity Nano (EV01G21A)** with one key from **Positron Studio**, **Proton IDE** or **VS Code** – no MPLAB X, no programmer, no wires, no bootloader. CNanoKit uses the kit's own on-board debugger through Microchip's free *pymcuprog*.
 
-**Web page:** https://onderk.github.io/CNanoKit/ · **Download:** [latest release](https://github.com/onderk/CNanoKit/releases/latest) → `CNanoKit_v1.1_*.zip`.
+**Web page:** https://onderk.github.io/CNanoKit/ · **Forum topic:** [protoncompiler.com](https://protoncompiler.com/index.php/topic,3440.0.html) · **Download:** [latest release](https://github.com/onderk/CNanoKit/releases/latest) → `CNanoKit_v1.1_*.zip`.
 
 ## What you get
 - **One key** compiles, programs, verifies and resets the kit: Positron Studio **F10** · Proton IDE **Program (CNanoProg)** button · VS Code **Ctrl+Alt+M** (or Ctrl+Alt+C, then Ctrl+Alt+P).
@@ -59,4 +59,4 @@ Breakpoint debugging (use MPLAB X for that). Other kits are not tested.
 Türkçe kılavuzlar: [docs/YENI_PC_KURULUM_TR_02102026_1240.md](docs/YENI_PC_KURULUM_TR_02102026_1240.md) · [docs/KURULUM_TR_01102026_2030.md](docs/KURULUM_TR_01102026_2030.md)
 
 ---
-Freeware: free to use, do not modify or redistribute modified versions (see LICENSE.txt). No warranty. Positron8, Positron Studio and Proton IDE are products of their authors; CNanoKit only adds settings and uses Proton IDE's documented Plugin Manager files. Feedback: protoncompiler.com forum (user okmn).
+Freeware: free to use, do not modify or redistribute modified versions (see LICENSE.txt). No warranty. Positron8, Positron Studio and Proton IDE are products of their authors; CNanoKit only adds settings and uses Proton IDE's documented Plugin Manager files. Feedback: [CNanoKit forum topic](https://protoncompiler.com/index.php/topic,3440.0.html) (user okmn).
