@@ -1,0 +1,14 @@
+# Gizli/kişisel — ASLA kasaya gitmez
+.anahtarlar/
+*.env
+api.env
+*.key
+*.pem
+# Geçici
+__pycache__/
+*.pyc
+log/
+*.tmp
+~$*
+Thumbs.db
+desktop.ini

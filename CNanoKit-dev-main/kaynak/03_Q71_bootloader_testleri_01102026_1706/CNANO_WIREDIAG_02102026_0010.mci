@@ -1,0 +1,20 @@
+[Project]
+Filename=C:\Tarim\Q71_CNano_Test_01102026_1706\CNANO_WIREDIAG_02102026_0010.bas
+[Environment]
+CaretX=94
+CaretY=22
+Topline=1
+[Version]
+Enable=1
+Rollover=255
+Major=0
+Minor=0
+Release=0
+Build=2
+[Results]
+Visible=1
+Height=117
+View=2
+[Status]
+Message=Success : 960 program bytes used, 85 variable bytes used
+Image=0

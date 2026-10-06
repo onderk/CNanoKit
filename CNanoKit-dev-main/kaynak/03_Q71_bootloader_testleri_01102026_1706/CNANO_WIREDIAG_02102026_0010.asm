@@ -1,0 +1,1665 @@
+;   /\\\\\\\\\
+;  /\\\///////\\\
+;  \/\\\     \/\\\                                                 /\\\          /\\\
+;   \/\\\\\\\\\\\/        /\\\\\     /\\\\\\\\\\     /\\\\\\\\   /\\\\\\\\\\\  /\\\\\\\\\\\  /\\\\\\\\\
+;    \/\\\//////\\\      /\\\///\\\  \/\\\//////    /\\\/////\\\ \////\\\////  \////\\\////  \////////\\\
+;     \/\\\    \//\\\    /\\\  \//\\\ \/\\\\\\\\\\  /\\\\\\\\\\\     \/\\\         \/\\\        /\\\\\\\\\\
+;      \/\\\     \//\\\  \//\\\  /\\\  \////////\\\ \//\\///////      \/\\\ /\\     \/\\\ /\\   /\\\/////\\\
+;       \/\\\      \//\\\  \///\\\\\/    /\\\\\\\\\\  \//\\\\\\\\\\    \//\\\\\      \//\\\\\   \//\\\\\\\\/\\
+;        \///        \///     \/////     \//////////    \//////////      \/////        \/////     \////////\//
+;                                  Let's find out together what makes a PIC Tick!
+;
+; Code Produced by the Positron8 Compiler. Version 4.0.6.4
+; Created and Written by Les Johnson. 
+; Compiler version for Önder Kaman
+;----------------------------------------------------------
+;
+#define config_req 1
+ LIST  P = 18F56Q71, F = INHX32, W = 2, X = ON, R = DEC, MM = ON, N = 0, C = 255, T = ON
+; MICROCONTROLLER'S SFRS
+CLKRCON equ 0x39
+CLKRCLK equ 0x3A
+NVMCON0 equ 0x40
+NVMCON1 equ 0x41
+EECON1 equ 0x41
+NVMLOCK equ 0x42
+NVMADRL equ 0x43
+EEADRL equ 0x43
+NVMADRH equ 0x44
+NVMADRLH equ 0x44
+EEADRH equ 0x44
+EEADRLH equ 0x44
+NVMADRU equ 0x45
+NVMADRLHH equ 0x45
+NVMADRLHHH equ 0X04E8
+EEADRHH equ 0x45
+EEADRHHH equ 0X04E8
+EEADRLHH equ 0x45
+EEADRLHHH equ 0X04E8
+NVMDATL equ 0x46
+NVMDATAL equ 0x46
+EEDATL equ 0x46
+EEDATAL equ 0x46
+NVMDATH equ 0x47
+NVMDATAH equ 0x47
+EEDATH equ 0x47
+EEDATAH equ 0x47
+VREGCON equ 0x48
+BORCON equ 0x49
+HLVDCON0 equ 0x4A
+HLVDCON1 equ 0x4B
+ZCDCON equ 0x4C
+PMD0 equ 0x62
+PMD1 equ 0x63
+PMD2 equ 0x64
+PMD3 equ 0x65
+PMD4 equ 0x66
+PMD5 equ 0x67
+PMD6 equ 0x68
+CMOUT equ 0x6F
+CM1CON0 equ 0x70
+CM1CON1 equ 0x71
+CM1NCH equ 0x72
+CM1PCH equ 0x73
+CM2CON0 equ 0x74
+CM2CON1 equ 0x75
+CM2NCH equ 0x76
+CM2PCH equ 0x77
+WDTCON0 equ 0x78
+WDTCON1 equ 0x79
+WDTPSL equ 0x7A
+WDTPSH equ 0x7B
+WDTPSLH equ 0x7B
+WDTTMR equ 0x7C
+DAC1DATL equ 0x7D
+DAC1DATH equ 0x7E
+DAC1CON equ 0x7F
+SPI1RXB equ 0x80
+SPI1TXB equ 0x81
+SPI1TCNTL equ 0x82
+SPI1TCNTH equ 0x83
+SPI1TCNTLH equ 0x83
+SPI1CON0 equ 0x84
+SPI1CON1 equ 0x85
+SPI1CON2 equ 0x86
+SPI1STATUS equ 0x87
+SPI1TWIDTH equ 0x88
+SPI1BAUD equ 0x89
+SPI1INTF equ 0x8A
+SPI1INTE equ 0x8B
+SPI1CLK equ 0x8C
+ACTCON equ 0xAC
+OSCCON1 equ 0xAD
+OSCCON2 equ 0xAE
+OSCCON3 equ 0xAF
+OSCTUNE equ 0xB0
+OSCFRQ equ 0xB1
+OSCFREQ equ 0xB1
+OSCSTAT equ 0xB2
+OSCSTAT1 equ 0xB2
+OSCEN equ 0xB3
+PRLOCK equ 0xB4
+SCANPR equ 0xB5
+DMA1PR equ 0xB6
+DMA2PR equ 0xB7
+DMA3PR equ 0xB8
+DMA4PR equ 0xB9
+MAINPR equ 0xBE
+ISRPR equ 0xBF
+DAC2DAT equ 0xC0
+DAC2DATL equ 0xC0
+DAC2CON equ 0xC2
+DAC3DAT equ 0xC3
+DAC3DATL equ 0xC3
+DAC3CON equ 0xC5
+CLCDATA equ 0xD4
+CLCSELECT equ 0xD5
+CLCNCON equ 0xD6
+CLCNPOL equ 0xD7
+CLCNSEL0 equ 0xD8
+CLCNSEL1 equ 0xD9
+CLCNSEL2 equ 0xDA
+CLCNSEL3 equ 0xDB
+CLCNGLS0 equ 0xDC
+CLCNGLS1 equ 0xDD
+CLCNGLS2 equ 0xDE
+CLCNGLS3 equ 0xDF
+DMASELECT equ 0xE8
+DMANBUF equ 0xE9
+DMANDCNTL equ 0xEA
+DMANDCNTH equ 0xEB
+DMANDCNTLH equ 0xEB
+DMANDPTRL equ 0xEC
+DMANDPTRH equ 0xED
+DMANDPTRLH equ 0xED
+DMANDSZL equ 0xEE
+DMANDSZH equ 0xEF
+DMANDSZLH equ 0xEF
+DMANDSAL equ 0xF0
+DMANDSAH equ 0xF1
+DMANDSAH equ 0xF1
+DMANSCNTL equ 0xF2
+DMANSCNTH equ 0xF3
+DMANSCNTLH equ 0xF3
+DMANSPTRL equ 0xF4
+DMANSPTRH equ 0xF5
+DMANSPTRLH equ 0xF5
+DMANSPTRU equ 0xF6
+DMANSPTRLHH equ 0xF6
+DMANSPTRLHHH equ 0X04E8
+DMANSSZL equ 0xF7
+DMANSSZH equ 0xF8
+DMANSSZLH equ 0xF8
+DMANSSAL equ 0xF9
+DMANSSAH equ 0xFA
+DMANSSALH equ 0xFA
+DMANSSAU equ 0xFB
+DMANSSALHH equ 0xFB
+DMANSSALHHH equ 0X04E8
+DMANCON0 equ 0xFC
+DMANCON1 equ 0xFD
+DMANAIRQ equ 0xFE
+DMANSIRQ equ 0xFF
+; START OF SFR RAM BANK 1
+PORTW equ 0X0100
+LATW equ 0X0101
+PORTWIN0 equ 0X0102
+PORTWIN1 equ 0X0103
+PORTWIN2 equ 0X0104
+PORTWIN3 equ 0X0105
+PORTWIN4 equ 0X0106
+PORTWIN5 equ 0X0107
+PORTWIN6 equ 0X0108
+PORTWIN7 equ 0X0109
+PORTWCLK equ 0X010A
+PORTWDF equ 0X010B
+PORTWCON equ 0X010C
+ADCGA equ 0X0110
+ADCGB equ 0X0111
+ADCGC equ 0X0112
+ADCGD equ 0X0113
+ADCGE equ 0X0114
+ADCGF equ 0X0115
+OPA1CON0 equ 0X011F
+OPA1CON1 equ 0X0120
+OPA1CON2 equ 0X0121
+OPA1CON3 equ 0X0122
+OPA1CON4 equ 0X0123
+OPA1HWC equ 0X0124
+OPA1OFFSET equ 0X0125
+OPA1ORS equ 0X0126
+OPA2CON0 equ 0X0127
+OPA2CON1 equ 0X0128
+OPA2CON2 equ 0X0129
+OPA2CON3 equ 0X012A
+OPA2CON4 equ 0X012B
+OPA2HWC equ 0X012C
+OPA2OFFSET equ 0X012D
+OPA2ORS equ 0X012E
+LATA equ 0X0140
+LATB equ 0X0141
+LATC equ 0X0142
+LATD equ 0X0143
+LATE equ 0X0144
+LATF equ 0X0145
+TRISA equ 0X0148
+TRISB equ 0X0149
+TRISC equ 0X014A
+TRISD equ 0X014B
+TRISE equ 0X014C
+TRISF equ 0X014D
+PORTA equ 0X0150
+PORTB equ 0X0151
+PORTC equ 0X0152
+PORTD equ 0X0153
+PORTE equ 0X0154
+PORTF equ 0X0155
+APMCON equ 0X01C0
+APMPREL equ 0X01C1
+APMPREH equ 0X01C2
+APMPERL equ 0X01C3
+APMPERH equ 0X01C4
+APMSTART1L equ 0X01C5
+APMSTART1H equ 0X01C6
+APMPERS1L equ 0X01C7
+APMPERS1H equ 0X01C8
+APMSTART2L equ 0X01C9
+APMSTART2H equ 0X01CA
+APMSTART2U equ 0X01CB
+APMPERS2L equ 0X01CC
+APMPERS2H equ 0X01CD
+APMEND1L equ 0X01CE
+APMEND1H equ 0X01CF
+APMEND1U equ 0X01D0
+APMPERE1L equ 0X01D1
+APMPERE1H equ 0X01D2
+APMEND2L equ 0X01D3
+APMEND2H equ 0X01D4
+APMEND2U equ 0X01D5
+APMPERE2L equ 0X01D6
+APMPERE2H equ 0X01D7
+APMCLK equ 0X01D8
+APMSTATUSL equ 0X01D9
+APMSTATUSH equ 0X01DA
+; START OF SFR RAM BANK 2
+PPSLOCK equ 0X0200
+RA0PPS equ 0X0201
+RA1PPS equ 0X0202
+RA2PPS equ 0X0203
+RA3PPS equ 0X0204
+RA4PPS equ 0X0205
+RA5PPS equ 0X0206
+RA6PPS equ 0X0207
+RA7PPS equ 0X0208
+RB0PPS equ 0X0209
+RB1PPS equ 0X020A
+RB2PPS equ 0X020B
+RB3PPS equ 0X020C
+RB4PPS equ 0X020D
+RB5PPS equ 0X020E
+RB6PPS equ 0X020F
+RB7PPS equ 0X0210
+RC0PPS equ 0X0211
+RC1PPS equ 0X0212
+RC2PPS equ 0X0213
+RC3PPS equ 0X0214
+RC4PPS equ 0X0215
+RC5PPS equ 0X0216
+RC6PPS equ 0X0217
+RC7PPS equ 0X0218
+RD0PPS equ 0X0219
+RD1PPS equ 0X021A
+RD2PPS equ 0X021B
+RD3PPS equ 0X021C
+RD4PPS equ 0X021D
+RD5PPS equ 0X021E
+RD6PPS equ 0X021F
+RD7PPS equ 0X0220
+RE0PPS equ 0X0221
+RE1PPS equ 0X0222
+RE2PPS equ 0X0223
+RF0PPS equ 0X0225
+RF1PPS equ 0X0226
+RF2PPS equ 0X0227
+RF3PPS equ 0X0228
+RF4PPS equ 0X0229
+RF5PPS equ 0X022A
+RF6PPS equ 0X022B
+RF7PPS equ 0X022C
+INT0PPS equ 0X023E
+INT1PPS equ 0X023F
+INT2PPS equ 0X0240
+T0CKIPPS equ 0X0241
+T1CKIPPS equ 0X0242
+T1GPPS equ 0X0243
+T3CKIPPS equ 0X0244
+T3GPPS equ 0X0245
+T2INPPS equ 0X0248
+T4INPPS equ 0X0249
+CCP1PPS equ 0X024F
+CCP2PPS equ 0X0250
+PWM1ERSPPS equ 0X0251
+PWM2ERSPPS equ 0X0252
+PWM3ERSPPS equ 0X0253
+PWMIN0PPS equ 0X0257
+PWMIN1PPS equ 0X0258
+CWG1PPS equ 0X025B
+CWG1INPPS equ 0X025B
+CLCIN0PPS equ 0X0261
+CLCIN1PPS equ 0X0262
+CLCIN2PPS equ 0X0263
+CLCIN3PPS equ 0X0264
+CLCIN4PPS equ 0X0265
+CLCIN5PPS equ 0X0266
+CLCIN6PPS equ 0X0267
+CLCIN7PPS equ 0X0268
+ADACTPPS equ 0X0269
+SPI1SCKPPS equ 0X026A
+SPI1SDIPPS equ 0X026B
+SPI1SSPPS equ 0X026C
+I2C1SDAPPS equ 0X0270
+I2C1SCLPPS equ 0X0271
+U1RXPPS equ 0X0272
+U1CTSPPS equ 0X0273
+U2RXPPS equ 0X0274
+U2CTSPPS equ 0X0275
+OPA1ORPPS equ 0X0276
+OPA2ORPPS equ 0X0277
+TUIN0PPS equ 0X0278
+TUIN1PPS equ 0X0279
+APMCLKPPS equ 0X027A
+RB2I2C equ 0X0285
+RB1I2C equ 0X0286
+RC4I2C equ 0X0287
+RC3I2C equ 0X0288
+I2C1RXB equ 0X0289
+I2C1TXB equ 0X028A
+I2C1CNTL equ 0X028B
+I2C1CNTH equ 0X028C
+I2C1CNTLH equ 0X028C
+I2C1ADB0 equ 0X028D
+I2C1ADB1 equ 0X028E
+I2C1ADR0 equ 0X028F
+I2C1ADR1 equ 0X0290
+I2C1ADR2 equ 0X0291
+I2C1ADR3 equ 0X0292
+I2C1CON0 equ 0X0293
+I2C1CON1 equ 0X0294
+I2C1CON2 equ 0X0295
+I2C1CON3 equ 0X0296
+I2C1ERR equ 0X0297
+I2C1STAT0 equ 0X0298
+I2C1STAT1 equ 0X0299
+I2C1PIR equ 0X029A
+I2C1PIE equ 0X029B
+I2C1BTO equ 0X029C
+I2C1BAUD equ 0X029D
+I2C1CLK equ 0X029E
+I2C1BTOC equ 0X029F
+U1RXB equ 0X02A0
+U1RXBL equ 0X02A0
+U1RXCHK equ 0X02A1
+U1TXB equ 0X02A2
+U1TXBL equ 0X02A2
+U1TXCHK equ 0X02A3
+U1P1L equ 0X02A4
+U1P1H equ 0X02A5
+U1P1LH equ 0X02A5
+U1P2L equ 0X02A6
+U1P2H equ 0X02A7
+U1P2LH equ 0X02A7
+U1P3L equ 0X02A8
+U1P3H equ 0X02A9
+U1P3LH equ 0X02A9
+U1CON0 equ 0X02AA
+U1CON1 equ 0X02AB
+U1CON2 equ 0X02AC
+U1BRGL equ 0X02AD
+U1BRGH equ 0X02AE
+U1BRGLH equ 0X02AE
+U1FIFO equ 0X02AF
+U1UIR equ 0X02B0
+U1ERRIR equ 0X02B1
+U1ERRIE equ 0X02B2
+U2RXB equ 0X02B4
+U2RXBL equ 0X02B4
+U2TXB equ 0X02B6
+U2TXBL equ 0X02B6
+U2P1 equ 0X02B8
+U2P1L equ 0X02B8
+U2P2 equ 0X02BA
+U2P2L equ 0X02BA
+U2P3 equ 0X02BC
+U2P3L equ 0X02BC
+U2CON0 equ 0X02BE
+U2CON1 equ 0X02BF
+U2CON2 equ 0X02C0
+U2BRGL equ 0X02C1
+U2BRGH equ 0X02C2
+U2BRGLH equ 0X02C2
+U2FIFO equ 0X02C3
+U2UIR equ 0X02C4
+U2ERRIR equ 0X02C5
+U2ERRIE equ 0X02C6
+TMR1L equ 0X0312
+TMR1H equ 0X0313
+TMR1LH equ 0X0313
+T1CON equ 0X0314
+TMR1CON equ 0X0314
+T1GCON equ 0X0315
+TMR1GCON equ 0X0315
+T1GATE equ 0X0316
+TMR1GATE equ 0X0316
+T1CLK equ 0X0317
+TMR1CLK equ 0X0317
+PR1 equ 0X0317
+TMR0L equ 0X0318
+TMR0 equ 0X0318
+TMR0H equ 0X0319
+TMR0LH equ 0X0319
+PR0 equ 0X0319
+T0CON0 equ 0X031A
+T0CON1 equ 0X031B
+T2TMR equ 0X031D
+TMR2 equ 0X031D
+T2PR equ 0X031E
+PR2 equ 0X031E
+T2CON equ 0X031F
+T2HLT equ 0X0320
+T2CLKCON equ 0X0321
+T2CLK equ 0X0321
+T2RST equ 0X0322
+TMR3L equ 0X0323
+TMR3H equ 0X0324
+TMR3LH equ 0X0324
+T3CON equ 0X0325
+TMR3CON equ 0X0325
+T3GCON equ 0X0326
+TMR3GCON equ 0X0326
+T3GATE equ 0X0327
+TMR3GATE equ 0X0327
+T3CLK equ 0X0328
+TMR3CLK equ 0X0328
+PR3 equ 0X0328
+T4TMR equ 0X032A
+TMR4 equ 0X032A
+T4PR equ 0X032B
+PR4 equ 0X032B
+T4CON equ 0X032C
+T4HLT equ 0X032D
+T4CLKCON equ 0X032E
+T4CLK equ 0X032E
+T4RST equ 0X032F
+CCPR1L equ 0X0340
+CCPR1H equ 0X0341
+CCPR1LH equ 0X0341
+CCP1CON equ 0X0342
+CCP1CAP equ 0X0343
+CCPR2L equ 0X0344
+CCPR2H equ 0X0345
+CCPR2LH equ 0X0345
+CCP2CON equ 0X0346
+CCP2CAP equ 0X0347
+CCPTMRS0 equ 0X034C
+CRCDATAL equ 0X034E
+CRCDATAH equ 0X034F
+CRCDATALH equ 0X034F
+CRCDATAU equ 0X0350
+CRCDATALHH equ 0X0350
+CRCDATAT equ 0X0351
+CRCOUTL equ 0X0352
+CRCSHFTL equ 0X0352
+CRCSHIFTL equ 0X0352
+CRCXORL equ 0X0352
+CRCOUTH equ 0X0353
+CRCOUTLH equ 0X0353
+CRCSHFTH equ 0X0353
+CRCSHFTLH equ 0X0353
+CRCSHIFTH equ 0X0353
+CRCSHIFTLH equ 0X0353
+CRCXORH equ 0X0353
+CRCXORLH equ 0X0353
+CRCOUTU equ 0X0354
+CRCOUTLHH equ 0X0354
+CRCSHFTU equ 0X0354
+CRCSHFTLHH equ 0X0354
+CRCSHIFTU equ 0X0354
+CRCSHIFTLHH equ 0X0354
+CRCXORU equ 0X0354
+CRCXORLHH equ 0X0354
+CRCOUTT equ 0X0355
+CRCSHFTT equ 0X0355
+CRCSHIFTT equ 0X0355
+CRCXORT equ 0X0355
+CRCCON0 equ 0X0356
+CRCCON1 equ 0X0357
+CRCCON2 equ 0X0358
+SCANLADRL equ 0X035A
+SCANLADRH equ 0X035B
+SCANLADRLH equ 0X035B
+SCANLADRU equ 0X035C
+SCANLADRLHH equ 0X035C
+SCANLADRLHHH equ 0X04E8
+SCANHADRL equ 0X035D
+SCANHADRH equ 0X035E
+SCANHADRLH equ 0X035E
+SCANHADRU equ 0X035F
+SCANHADRLHH equ 0X035F
+SCANHADRLHHH equ 0X04E8
+SCANCON0 equ 0X0360
+SCANTRIG equ 0X0361
+STATUS_CSHAD equ 0X0373
+WREG_CSHAD equ 0X0374
+BSR_CSHAD equ 0X0375
+SHADCON equ 0X0376
+STATUS_SHAD equ 0X0377
+WREG_SHAD equ 0X0378
+BSR_SHAD equ 0X0379
+PCLATH_SHAD equ 0X037A
+PCLATLH_SHAD equ 0X037A
+PCLATU_SHAD equ 0X037B
+PCLATHH_SHAD equ 0X037B
+PCLATHHH equ 0X04E8
+FSR0L_SHAD equ 0X037C
+FSR0H_SHAD equ 0X037D
+FSR0LH_SHAD equ 0X037D
+FSR1L_SHAD equ 0X037E
+FSR1H_SHAD equ 0X037F
+FSR1LH_SHAD equ 0X037F
+FSR2L_SHAD equ 0X0380
+FSR2H_SHAD equ 0X0381
+FSR2LH_SHAD equ 0X0381
+PRODL_SHAD equ 0X0382
+PRODH_SHAD equ 0X0383
+PRODLH_SHAD equ 0X0383
+TU16ACON0 equ 0X03A0
+TU16ACON1 equ 0X03A1
+TU16AHLT equ 0X03A2
+TU16APS equ 0X03A3
+TU16ATMRL equ 0X03A4
+TU16ACRL equ 0X03A4
+TU16ATMRH equ 0X03A5
+TU16ACRH equ 0X03A5
+TU16APRL equ 0X03A6
+TU16APRH equ 0X03A7
+TU16ACLK equ 0X03A8
+TU16AERS equ 0X03A9
+TU16BCON0 equ 0X03AA
+TU16BCON1 equ 0X03AB
+TU16BHLT equ 0X03AC
+TU16BPS equ 0X03AD
+TU16BTMRL equ 0X03AE
+TU16BCRL equ 0X03AE
+TU16BTMRH equ 0X03AF
+TU16BCRH equ 0X03AF
+TU16BPRL equ 0X03B0
+TU16BPRH equ 0X03B1
+TU16BCLK equ 0X03B2
+TU16BERS equ 0X03B3
+TUCHAIN equ 0X03B4
+CWG1CLK equ 0X03BC
+CWG1CLKCON equ 0X03BC
+CWG1ISM equ 0X03BD
+CWG1DAT equ 0X03BD
+CWG1DBR equ 0X03BE
+CWG1DBF equ 0X03BF
+CWG1CON0 equ 0X03C0
+CWG1CON1 equ 0X03C1
+CWG1AS0 equ 0X03C2
+CWG1AS1 equ 0X03C3
+CWG1STR equ 0X03C4
+FVRCON equ 0X03D7
+ADCPCON equ 0X03D8
+ADCP equ 0X03D8
+ADLTHL equ 0X03D9
+ADLTHH equ 0X03DA
+ADLTHLH equ 0X03DA
+ADUTHL equ 0X03DB
+ADUTHH equ 0X03DC
+ADUTHLH equ 0X03DC
+ADERRL equ 0X03DD
+ADERRH equ 0X03DE
+ADERRLH equ 0X03DE
+ADSTPTL equ 0X03DF
+ADSTPTH equ 0X03E0
+ADSTPTLH equ 0X03E0
+ADFLTRL equ 0X03E1
+ADFLTRH equ 0X03E2
+ADFLTRLH equ 0X03E2
+ADACCL equ 0X03E3
+ADACCH equ 0X03E4
+ADACCLH equ 0X03E4
+ADACCU equ 0X03E5
+ADACCLHH equ 0X03E5
+ADACCLHHH equ 0X04E8
+ADCNT equ 0X03E6
+ADRPT equ 0X03E7
+ADPREVL equ 0X03E8
+ADPREVH equ 0X03E9
+ADPREVLH equ 0X03E9
+ADRESL equ 0X03EA
+ADRESH equ 0X03EB
+ADRESLH equ 0X03EB
+ADPCH equ 0X03EC
+ADNCH equ 0X03ED
+ADACQL equ 0X03EE
+ADACQH equ 0X03EF
+ADACQLH equ 0X03EF
+ADCAP equ 0X03F0
+ADPREL equ 0X03F1
+ADPREH equ 0X03F2
+ADPRELH equ 0X03F2
+ADCON0 equ 0X03F3
+ADCON1 equ 0X03F4
+ADCON2 equ 0X03F5
+ADCON3 equ 0X03F6
+ADSTAT equ 0X03F7
+ADREF equ 0X03F8
+ADACT equ 0X03F9
+ADCLK equ 0X03FA
+ADCTX equ 0X03FB
+ADCSEL1 equ 0X03FC
+ADCSEL2 equ 0X03FD
+ADCSEL3 equ 0X03FE
+ADCSEL4 equ 0X03FF
+; START OF SFR RAM BANK 4
+ANSELA equ 0X0400
+WPUA equ 0X0401
+ODCONA equ 0X0402
+SLRCONA equ 0X0403
+INLVLA equ 0X0404
+IOCAP equ 0X0405
+IOCAN equ 0X0406
+IOCAF equ 0X0407
+ANSELB equ 0X0408
+WPUB equ 0X0409
+ODCONB equ 0X040A
+SLRCONB equ 0X040B
+INLVLB equ 0X040C
+IOCBP equ 0X040D
+IOCBN equ 0X040E
+IOCBF equ 0X040F
+ANSELC equ 0X0410
+WPUC equ 0X0411
+ODCONC equ 0X0412
+SLRCONC equ 0X0413
+INLVLC equ 0X0414
+IOCCP equ 0X0415
+IOCCN equ 0X0416
+IOCCF equ 0X0417
+ANSELD equ 0X0418
+WPUD equ 0X0419
+ODCOND equ 0X041A
+SLRCOND equ 0X041B
+INLVLD equ 0X041C
+ANSELE equ 0X0420
+WPUE equ 0X0421
+ODCONE equ 0X0422
+SLRCONE equ 0X0423
+INLVLE equ 0X0424
+IOCEP equ 0X0425
+IOCEN equ 0X0426
+IOCEF equ 0X0427
+ANSELF equ 0X0428
+WPUF equ 0X0429
+ODCONF equ 0X042A
+SLRCONF equ 0X042B
+INLVLF equ 0X042C
+IOCWP equ 0X043D
+IOCWN equ 0X043E
+IOCWF equ 0X043F
+NCO1ACCL equ 0X0440
+NCO1ACCH equ 0X0441
+NCO1ACCLH equ 0X0441
+NCO1ACCU equ 0X0442
+NCO1ACCLHH equ 0X0442
+NCO1ACCLHHH equ 0X04E8
+NCO1INCL equ 0X0443
+NCO1INCH equ 0X0444
+NCO1INCLH equ 0X0444
+NCO1INCU equ 0X0445
+NCO1INCLHH equ 0X0445
+NCO1INCLHHH equ 0X04E8
+NCO1CON equ 0X0446
+NCO1CLK equ 0X0447
+FSCMCON equ 0X0458
+IVTLOCK equ 0X0459
+IVTADL equ 0X045A
+IVTADH equ 0X045B
+IVTADLH equ 0X045B
+IVTADU equ 0X045C
+IVTADLHH equ 0X045C
+IVTADLHHH equ 0X04E8
+IVTBASEL equ 0X045D
+IVTBASEH equ 0X045E
+IVTBASELH equ 0X045E
+IVTBASEU equ 0X045F
+IVTBASELHH equ 0X045F
+IVTBASELHHH equ 0X04E8
+; START OF ACCESS SFRS
+PWM1ERS equ 0X0460
+PWM1CLK equ 0X0461
+PWM1LDS equ 0X0462
+PWM1PRL equ 0X0463
+PWM1PRH equ 0X0464
+PWM1PRLH equ 0X0464
+PWM1CPRE equ 0X0465
+PWM1PIPOS equ 0X0466
+PWM1GIR equ 0X0467
+PWM1GIE equ 0X0468
+PWM1CON equ 0X0469
+PWM1S1CFG equ 0X046A
+PWM1S1P1L equ 0X046B
+PWM1S1P1H equ 0X046C
+PWM1S1P1LH equ 0X046C
+PWM1S1P2L equ 0X046D
+PWM1S1P2H equ 0X046E
+PWM1S1P2LH equ 0X046E
+PWM2ERS equ 0X046F
+PWM2CLK equ 0X0470
+PWM2LDS equ 0X0471
+PWM2PRL equ 0X0472
+PWM2PRH equ 0X0473
+PWM2PRLH equ 0X0473
+PWM2CPRE equ 0X0474
+PWM2PIPOS equ 0X0475
+PWM2GIR equ 0X0476
+PWM2GIE equ 0X0477
+PWM2CON equ 0X0478
+PWM2S1CFG equ 0X0479
+PWM2S1P1L equ 0X047A
+PWM2S1P1H equ 0X047B
+PWM2S1P1LH equ 0X047B
+PWM2S1P2L equ 0X047C
+PWM2S1P2H equ 0X047D
+PWM2S1P2LH equ 0X047D
+PWM3ERS equ 0X047E
+PWM3CLK equ 0X047F
+PWM3LDS equ 0X0480
+PWM3PRL equ 0X0481
+PWM3PRH equ 0X0482
+PWM3PRLH equ 0X0482
+PWM3CPRE equ 0X0483
+PWM3PIPOS equ 0X0484
+PWM3GIR equ 0X0485
+PWM3GIE equ 0X0486
+PWM3CON equ 0X0487
+PWM3S1CFG equ 0X0488
+PWM3S1P1L equ 0X0489
+PWM3S1P1H equ 0X048A
+PWM3S1P1LH equ 0X048A
+PWM3S1P2L equ 0X048B
+PWM3S1P2H equ 0X048C
+PWM3S1P2LH equ 0X048C
+PWMLOAD equ 0X0499
+PWMEN equ 0X049A
+IPR0 equ 0X049C
+IPR1 equ 0X049D
+IPR2 equ 0X049E
+IPR3 equ 0X049F
+IPR4 equ 0X04A0
+IPR5 equ 0X04A1
+IPR6 equ 0X04A2
+IPR7 equ 0X04A3
+IPR8 equ 0X04A4
+IPR9 equ 0X04A5
+IPR10 equ 0X04A6
+PIE0 equ 0X04A7
+PIE1 equ 0X04A8
+PIE2 equ 0X04A9
+PIE3 equ 0X04AA
+PIE4 equ 0X04AB
+PIE5 equ 0X04AC
+PIE6 equ 0X04AD
+PIE7 equ 0X04AE
+PIE8 equ 0X04AF
+PIE9 equ 0X04B0
+PIE10 equ 0X04B1
+PIR0 equ 0X04B2
+PIR1 equ 0X04B3
+PIR2 equ 0X04B4
+PIR3 equ 0X04B5
+PIR4 equ 0X04B6
+PIR5 equ 0X04B7
+PIR6 equ 0X04B8
+PIR7 equ 0X04B9
+PIR8 equ 0X04BA
+PIR9 equ 0X04BB
+PIR10 equ 0X04BC
+INTCON0 equ 0X04D6
+INTCON1 equ 0X04D7
+STATUS equ 0X04D8
+FSR2L equ 0X04D9
+FSR2H equ 0X04DA
+FSR2LH equ 0X04DA
+PLUSW2 equ 0X04DB
+PREINC2 equ 0X04DC
+POSTDEC2 equ 0X04DD
+POSTINC2 equ 0X04DE
+INDF2 equ 0X04DF
+BSR equ 0X04E0
+FSR1L equ 0X04E1
+FSR1H equ 0X04E2
+FSR1LH equ 0X04E2
+PLUSW1 equ 0X04E3
+PREINC1 equ 0X04E4
+POSTDEC1 equ 0X04E5
+POSTINC1 equ 0X04E6
+INDF1 equ 0X04E7
+WREG equ 0X04E8
+FSR0L equ 0X04E9
+FSR0H equ 0X04EA
+FSR0LH equ 0X04EA
+PLUSW0 equ 0X04EB
+PREINC0 equ 0X04EC
+POSTDEC0 equ 0X04ED
+POSTINC0 equ 0X04EE
+INDF0 equ 0X04EF
+PCON0 equ 0X04F0
+PCON1 equ 0X04F1
+CPUDOZE equ 0X04F2
+PRODL equ 0X04F3
+PRODH equ 0X04F4
+PRODLH equ 0X04F4
+TABLAT equ 0X04F5
+TBLPTRL equ 0X04F6
+TBLPTRH equ 0X04F7
+TBLPTRLH equ 0X04F7
+TBLPTRU equ 0X04F8
+TBLPTRLHH equ 0X04F8
+TBLPTRLHHH equ 0X04E8
+PCL equ 0X04F9
+PCLATH equ 0X04FA
+PCLATLH equ 0X04FA
+PCLATU equ 0X04FB
+PCLATHH equ 0X04FB
+PCLATHHH equ 0X04E8
+STKPTR equ 0X04FC
+TOSL equ 0X04FD
+TOSH equ 0X04FE
+TOSLH equ 0X04FE
+TOSU equ 0X04FF
+TOSLHH equ 0X04FF
+TOSLHHH equ 0X04E8
+; I2C PINS USED BY HBUSIN AND HBUSOUT
+_I2C_SDA_port = TRISC
+_I2C_SDA_pin = 4
+_I2C_SCL_port = TRISC
+_I2C_SCL_pin = 3
+; SFR BITS USED INTERNALLY BY THE COMPILER
+C=0
+DC=1
+Z=2
+OV=3
+N=4
+PD=5
+To=6
+PP_GO=0
+PP_WRERR=7
+PP_RDY=4
+PP_SEN=7
+PP_RD0=0
+PP_RD1=1
+PP_RD2=2
+PP_RD3=3
+PP_RD4=4
+PP_RD5=5
+PP_RD6=6
+PP_RD7=7
+PP_RD0PPS0=0
+PP_RD0PPS1=1
+PP_RD0PPS2=2
+PP_RD0PPS3=3
+PP_RD0PPS4=4
+PP_RD0PPS5=5
+PP_RD1PPS0=0
+PP_RD1PPS1=1
+PP_RD1PPS2=2
+PP_RD1PPS3=3
+PP_RD1PPS4=4
+PP_RD1PPS5=5
+PP_RD2PPS0=0
+PP_RD2PPS1=1
+PP_RD2PPS2=2
+PP_RD2PPS3=3
+PP_RD2PPS4=4
+PP_RD2PPS5=5
+PP_RD3PPS0=0
+PP_RD3PPS1=1
+PP_RD3PPS2=2
+PP_RD3PPS3=3
+PP_RD3PPS4=4
+PP_RD3PPS5=5
+PP_RD4PPS0=0
+PP_RD4PPS1=1
+PP_RD4PPS2=2
+PP_RD4PPS3=3
+PP_RD4PPS4=4
+PP_RD4PPS5=5
+PP_RD5PPS0=0
+PP_RD5PPS1=1
+PP_RD5PPS2=2
+PP_RD5PPS3=3
+PP_RD5PPS4=4
+PP_RD5PPS5=5
+PP_RD6PPS0=0
+PP_RD6PPS1=1
+PP_RD6PPS2=2
+PP_RD6PPS3=3
+PP_RD6PPS4=4
+PP_RD6PPS5=5
+PP_RD7PPS0=0
+PP_RD7PPS1=1
+PP_RD7PPS2=2
+PP_RD7PPS3=3
+PP_RD7PPS4=4
+PP_RD7PPS5=5
+PP_RSEN=6
+PP_ACKDT=6
+PP_WRIF=4
+PP_WR1IF=4
+PP_WRIE=4
+PP_WR1IE=4
+PP_SENDB=0
+PP_RXBE=1
+PP_RXFOIF=1
+PP_RD16=1
+PP_RD161=1
+PP_T2CKPS0=4
+PP_T2CKPS1=5
+PP_T2CKPS2=6
+PP_TMR2ON=7
+PP_RD163=1
+PP_TMR4ON=7
+PP_C1TSEL0=0
+PP_C1TSEL1=1
+PP_C2TSEL0=2
+PP_C2TSEL1=3
+PP_RDSEL=3
+PP_ADCS=4
+PP_ADCSEN=5
+PP_ADON=7
+PP_GO_NOT_DONE=0
+PP_GO_DONE=0
+PP_ADCS0=0
+PP_ADCS1=1
+PP_ADCS2=2
+PP_ADCS3=3
+PP_ADCS4=4
+PP_ADCS5=5
+PP_U1RXIF=0
+PP_U1TXIF=1
+PP_U2RXIF=0
+PP_U2TXIF=1
+; PPS INTERNAL VALUES
+_PPS_FN_ADGRDB=40
+_PPS_FN_ADGRDA=39
+_PPS_FN_CLKR=38
+_PPS_FN_NCO1=37
+_PPS_FN_TU16B=36
+_PPS_FN_TU16A=35
+_PPS_FN_TMR0=34
+_PPS_FN_SDA1=33
+_PPS_FN_SCL1=32
+_PPS_FN_SS1=31
+_PPS_FN_SDO1=30
+_PPS_FN_SCK1=29
+_PPS_FN_C2OUT=28
+_PPS_FN_C1OUT=27
+_PPS_FN_RTS2=26
+_PPS_FN_TXDE2=25
+_PPS_FN_TX2=24
+_PPS_FN_RTS1=23
+_PPS_FN_TXDE1=22
+_PPS_FN_TX1=21
+_PPS_FN_PWM32=20
+_PPS_FN_PWM31=19
+_PPS_FN_PWM22=18
+_PPS_FN_PWM21=17
+_PPS_FN_PWM12=16
+_PPS_FN_PWM11=15
+_PPS_FN_CCP2=14
+_PPS_FN_CCP1=13
+_PPS_FN_CWG1D=12
+_PPS_FN_CWG1C=11
+_PPS_FN_CWG1B=10
+_PPS_FN_CWG1A=9
+_PPS_FN_CLC8=8
+_PPS_FN_CLC7=7
+_PPS_FN_CLC6=6
+_PPS_FN_CLC5=5
+_PPS_FN_CLC4=4
+_PPS_FN_CLC3=3
+_PPS_FN_CLC2=2
+_PPS_FN_CLC1=1
+; COMPILER'S INTERNAL CONSTANTS AND ALIASES
+#define __18F56Q71 1
+#define xtal 64
+#define _core 16
+#define _MaxRAM 4096
+#define _RAM_End 0X14FF
+#define _MaxMem 0X010000
+#define _ADC 2
+#define _ADC_res 12
+#define _eeprom 256
+#define ram_banks 16
+#define _USART 2
+#define _USB 0
+#define _flash 1
+#define _cwrite_block 1
+#define _TRIS_offset -8
+#define __EE_RW_type 3
+#define __Flash_RW_type 3
+#define __MSSP_type 1
+#define __HPWM_type 1
+#define __adin_type 1
+#define __UART_type 3
+#define __PPS 1
+#define __PPS_type 1
+#define __movffl 1
+#define BankA_Start 0X500
+#define BankA_End 0X55F
+#define clrw clrf WREG
+#define negw negf WREG
+#define skpc btfss STATUS,0
+#define skpnc btfsc STATUS,0
+#define clrc bcf STATUS,0
+#define setc bsf STATUS,0
+#define skpz btfss STATUS,2
+#define skpnz btfsc STATUS,2
+#define clrz bcf STATUS,2
+#define setz bsf STATUS,2
+; COMPILER SYSTEM VARIABLES
+BPF equ 0X500
+BPFH equ 0X501
+GEN4 equ 0X502
+GEN4H equ 0X503
+PBS_VAR0 equ 0X504
+PP0 equ 0X505
+PP0H equ 0X506
+PP1 equ 0X507
+PP1H equ 0X508
+PP2 equ 0X509
+PP2H equ 0X50A
+; BIT HOLDER VARIABLES
+_B__VR1 equ 0X50B
+; STANDARD VARIABLES
+sTx equ 0X50C
+variable sTx#0=0X50C,sTx#1=0X50D,sTx#2=0X50E,sTx#3=0X50F
+variable sTx#4=0X510,sTx#5=0X511,sTx#6=0X512,sTx#7=0X513
+variable sTx#8=0X514,sTx#9=0X515,sTx#10=0X516,sTx#11=0X517
+variable sTx#12=0X518,sTx#13=0X519,sTx#14=0X51A,sTx#15=0X51B
+variable sTx#16=0X51C,sTx#17=0X51D,sTx#18=0X51E,sTx#19=0X51F
+variable sTx#20=0X520,sTx#21=0X521,sTx#22=0X522,sTx#23=0X523
+variable sTx#24=0X524,sTx#25=0X525,sTx#26=0X526,sTx#27=0X527
+variable sTx#28=0X528,sTx#29=0X529,sTx#30=0X52A,sTx#31=0X52B
+variable sTx#32=0X52C,sTx#33=0X52D,sTx#34=0X52E,sTx#35=0X52F
+variable sTx#36=0X530,sTx#37=0X531,sTx#38=0X532,sTx#39=0X533
+variable sTx#40=0X534,sTx#41=0X535,sTx#42=0X536,sTx#43=0X537
+variable sTx#44=0X538,sTx#45=0X539,sTx#46=0X53A,sTx#47=0X53B
+variable sTx#48=0X53C,sTx#49=0X53D,sTx#50=0X53E,sTx#51=0X53F
+variable sTx#52=0X540,sTx#53=0X541,sTx#54=0X542,sTx#55=0X543
+variable sTx#56=0X544,sTx#57=0X545,sTx#58=0X546,sTx#59=0X547
+variable sTx#60=0X548,sTx#61=0X549,sTx#62=0X54A,sTx#63=0X54B
+variable sTx#64=0X54C
+bChar equ 0X54D
+bI equ 0X54E
+wLow5 equ 0X54F
+wLow5H equ 0X550
+wLow7 equ 0X551
+wLow7H equ 0X552
+wN equ 0X553
+wNH equ 0X554
+; ALIAS VARIABLES
+#define bW1 _B__VR1,0
+#define bW2 _B__VR1,1
+#define bW3 _B__VR1,2
+#define bW4 _B__VR1,3
+#define bW5 _B__VR1,4
+#define bW6 _B__VR1,5
+; CONSTANTS
+#define __xtal 64
+;---------------------------------------------
+; START OF THE COMPILER'S LIBRARY ROUTINES
+_compiler__start_
+    org 0x00
+    nop
+    nop
+    goto _compiler_main_start_
+    org 0x08
+__dec__ASCII__outb
+    clrf GEN4H,0
+__dec__ASCII__outc
+    movwf PP2,0
+__dec__ASCII__outd
+    clrf PP2H,0
+__dec__ASCII__out
+    bcf BPF,3
+    movf GEN4H,W
+    btfsc STATUS,2
+    bsf BPF,3
+    movlw 0x05
+    movwf GEN4,0
+    movlw 0x27
+    movwf PP1H,0
+    movlw 0x10
+    rcall __send_dec_digit__
+    movlw 0x03
+    movwf PP1H,0
+    movlw 0xE8
+    rcall __send_dec_digit__
+    clrf PP1H,0
+    movlw 0x64
+    rcall __send_dec_digit__
+    clrf PP1H,0
+    movlw 0x0A
+    rcall __send_dec_digit__
+    movf PP2,W
+    bra __send__it__
+__send_dec_digit__
+    movwf PP1,0
+    movf PP2H,W
+    movwf PP0H,0
+    movf PP2,W
+    movwf PP0,0
+    rcall __divide_u1616_
+    movf PP0,W
+__send__it__
+    movwf PP0,0
+    dcfsnz GEN4,F
+    bcf BPF,3
+    movf GEN4H,W
+    bz __send_it_skip__
+    subwf GEN4,W
+    bc __send_it_exit__
+__send_it_skip__
+    movf PP0,W
+    btfss STATUS,2
+    bcf BPF,3
+    btfsc BPF,3
+    bra __send_it_exit__
+    addlw 0x30
+    bra __byte_send__
+__send_it_exit__
+    return
+__byte_send__
+    btfss BPFH,1
+    bra __byte_send__checknext4
+    btfsc BPFH,0
+    bra __byte_send__checknext4
+    btfsc BPFH,1
+    movwf POSTINC0,0
+    return
+__byte_send__checknext4
+__delay_us_
+    clrf PP0H,0
+__delay_us_wreg_
+    addlw 0xFE
+    movwf PP0,0
+    nop
+    bra $ + 2
+    bra $ + 2
+    clrf WREG,0
+    subwfb PP0H,F
+    btfss STATUS,0
+    return
+    decf PP0,F
+    bra $ + 2
+    bra $ + 2
+    bra $ - 20
+__divide_u1616_
+    clrf PP2H,0
+    clrf PP2,0
+__divide_int_u1616_
+    movlw 0x10
+    movwf PRODL,0
+__divide_u1616_loop_
+    rlcf PP0H,W
+    rlcf PP2,F
+    rlcf PP2H,F
+    movf PP1,W
+    subwf PP2,W
+    movf PP1H,W
+    subwfb PP2H,W
+    bnc __divide_u1616_k_
+    movf PP1,W
+    subwf PP2,F
+    movf PP1H,W
+    subwfb PP2H,F
+    bsf STATUS,0
+__divide_u1616_k_
+    rlcf PP0,F
+    rlcf PP0H,F
+    decfsz PRODL,F
+    bra __divide_u1616_loop_
+    movf PP0,W
+    return
+__load_flashstring_to_RAM_
+__load_flashstring_to_RAM_24_
+    movlb high(NVMCON1)
+    clrf NVMCON1,1
+    movlb 0x05
+    tblrd*+
+    movf TABLAT,W
+    bz $ + 6
+    movwf POSTINC0,0
+    bra $ - 8
+    return
+;---------------------------------------------
+; USER. STRING VARIABLE PRE-LOADS
+_strlb__1
+    db 84,49,32,82,66,52
+    db 45,62,82,67,54,32
+    db 114,101,97,100,58,32
+    db 0
+_strlb__2
+_strlb__4
+    db 32,32,40,48,49,48
+    db 32,61,32,119,105,114
+    db 101,49,32,102,105,116
+    db 116,101,100,41,0
+_strlb__3
+    db 84,50,32,82,67,54
+    db 45,62,82,66,52,32
+    db 114,101,97,100,58,32
+    db 0
+_strlb__5
+    db 84,51,32,108,111,119
+    db 32,115,97,109,112,108
+    db 101,115,32,82,66,53
+    db 61,0
+_strlb__6
+    db 32,32,40,115,105,109
+    db 105,108,97,114,32,61
+    db 32,119,105,114,101,50
+    db 32,102,105,116,116,101
+    db 100,41,0
+_compiler_main_start_
+    clrf BPF,0
+    movlb high(NVMCON1)
+    clrf NVMCON1,1
+;---------------------------------------------
+; START OF THE USER'S PROGRAM CODE
+F1_SOF equ $ ; CNANO_WIREDIAG_02102026_0010.BAS
+    movlb 0x04
+    clrf ANSELA
+    clrf ANSELB
+    clrf ANSELC
+    clrf ANSELD
+    clrf ANSELE
+    clrf ANSELF
+    clrf SLRCONA
+    clrf SLRCONB
+    clrf SLRCONC
+    clrf SLRCOND
+    clrf SLRCONE
+    clrf SLRCONF
+    clrf INLVLA
+    clrf INLVLB
+    clrf INLVLC
+    clrf INLVLD
+    clrf INLVLE
+    clrf INLVLF
+    movlb 0x00
+    clrf CM1CON0
+    clrf CM2CON0
+F1_000017 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] OSCCON1 = $60
+    movlw 96
+    movwf OSCCON1
+F1_000018 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] OSCFRQ  = $08
+    movlw 8
+    movwf OSCFRQ
+F1_000019 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] ANSELA = 0 : ANSELB = 0 : ANSELC = 0
+    movlb 0x04
+    clrf ANSELA
+    clrf ANSELB
+    clrf ANSELC
+F1_000020 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] TRISC.7 = 1 : WPUC.7 = 1
+    movlb 0x01
+    bsf TRISC,7
+    movlb 0x04
+    bsf WPUC,7
+F1_000022 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] TRISC.6 = 1 : WPUC.6 = 1
+    movlb 0x01
+    bsf TRISC,6
+    movlb 0x04
+    bsf WPUC,6
+F1_000023 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATB.4 = 1 : TRISB.4 = 0 : DelayUs 50
+    movlb 0x01
+    bsf LATB,4
+    bcf TRISB,4
+    movlw 50
+    rcall __delay_us_
+F1_000024 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATB.4 = 0 : DelayUs 20 : bW1 = PORTC.6
+    movlb 0x01
+    bcf LATB,4
+    movlw 20
+    rcall __delay_us_
+    movlb 0x01
+    bsf _B__VR1,0
+    btfss PORTC,6
+    bcf _B__VR1,0
+F1_000025 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATB.4 = 1 : DelayUs 20 : bW2 = PORTC.6
+    bsf LATB,4
+    movlw 20
+    rcall __delay_us_
+    movlb 0x01
+    bsf _B__VR1,1
+    btfss PORTC,6
+    bcf _B__VR1,1
+F1_000026 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATB.4 = 0 : DelayUs 20 : bW3 = PORTC.6
+    bcf LATB,4
+    movlw 20
+    rcall __delay_us_
+    movlb 0x01
+    bsf _B__VR1,2
+    btfss PORTC,6
+    bcf _B__VR1,2
+F1_000027 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATB.4 = 1
+    bsf LATB,4
+F1_000029 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] TRISB.4 = 1 : WPUB.4 = 1 : WPUC.6 = 0
+    bsf TRISB,4
+    movlb 0x04
+    bsf WPUB,4
+    bcf WPUC,6
+F1_000030 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATC.6 = 1 : TRISC.6 = 0 : DelayUs 50
+    movlb 0x01
+    bsf LATC,6
+    bcf TRISC,6
+    movlw 50
+    rcall __delay_us_
+F1_000031 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATC.6 = 0 : DelayUs 20 : bW4 = PORTB.4
+    movlb 0x01
+    bcf LATC,6
+    movlw 20
+    rcall __delay_us_
+    movlb 0x01
+    bsf _B__VR1,3
+    btfss PORTB,4
+    bcf _B__VR1,3
+F1_000032 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATC.6 = 1 : DelayUs 20 : bW5 = PORTB.4
+    bsf LATC,6
+    movlw 20
+    rcall __delay_us_
+    movlb 0x01
+    bsf _B__VR1,4
+    btfss PORTB,4
+    bcf _B__VR1,4
+F1_000033 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATC.6 = 0 : DelayUs 20 : bW6 = PORTB.4
+    bcf LATC,6
+    movlw 20
+    rcall __delay_us_
+    movlb 0x01
+    bsf _B__VR1,5
+    btfss PORTB,4
+    bcf _B__VR1,5
+F1_000034 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATC.6 = 1 : TRISC.6 = 1 : WPUB.4 = 0
+    bsf LATC,6
+    bsf TRISC,6
+    movlb 0x04
+    bcf WPUB,4
+F1_000036 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] LATB.4 = 1 : TRISB.4 = 0
+    movlb 0x01
+    bsf LATB,4
+    bcf TRISB,4
+F1_000037 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] RB4PPS = 24
+    movlb 0x02
+    movlw 24
+    movwf RB4PPS
+F1_000038 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] U2RXPPS = ((1 << 3) | 5)
+    movlw 13
+    movwf U2RXPPS
+F1_000039 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] U2BRGH = 0 : U2BRGL = 138
+    clrf U2BRGH
+    movlw 138
+    movwf U2BRGL
+F1_000040 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] U2CON0 = ((1 << 7) | (1 << 5) | (1 << 4))
+    movlw 176
+    movwf U2CON0
+F1_000041 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] U2CON1 = (1 << 7)
+    movlw 128
+    movwf U2CON1
+F1_000042 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Do
+_lbl__2
+    movlb 0x05
+F1_000043 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] While U2FIFO.1 = 0
+_lbl__5
+    movff U2FIFO,WREG
+    btfsc WREG,1
+    bra _lbl__6
+F1_000044 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] bChar = U2RXB
+    movff U2RXB,bChar
+F1_000045 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] if bChar = "?" Then GoSub Report
+    movlw 63
+    cpfseq bChar
+    bra _lbl__8
+    rcall Report
+_lbl__8
+F1_000046 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] if bChar = "W" Then GoSub Watch
+    movlw 119
+    cpfseq bChar
+    bra _lbl__10
+    rcall Watch
+_lbl__10
+F1_000047 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Wend
+    bra _lbl__5
+_lbl__6
+_lbl__4
+F1_000048 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Loop
+    bra _lbl__2
+_lbl__3
+Report
+F1_000050 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] sTx = "T1 RB4->RC6 READ: " + Str$(Dec bW1) + Str$(Dec bW2) + Str$(Dec bW3) + "  (010 = WIRE1 FITTED)"
+    lfsr 0,sTx
+    movlw ((_strlb__1 >> 8) & 0xFF)
+    movwf TBLPTRLH
+    movlw (_strlb__1 & 0xFF)
+    movwf TBLPTRL
+    rcall __load_flashstring_to_RAM_
+    movlw 2
+    movwf BPFH
+    movlw 0
+    btfsc _B__VR1,0
+    movlw 1
+    rcall __dec__ASCII__outb
+    movlw 2
+    movwf BPFH
+    movlw 0
+    btfsc _B__VR1,1
+    movlw 1
+    rcall __dec__ASCII__outb
+    movlw 2
+    movwf BPFH
+    movlw 0
+    btfsc _B__VR1,2
+    movlw 1
+    rcall __dec__ASCII__outb
+    movlw ((_strlb__2 >> 8) & 0xFF)
+    movwf TBLPTRLH
+    movlw (_strlb__2 & 0xFF)
+    movwf TBLPTRL
+    rcall __load_flashstring_to_RAM_
+    clrf INDF0
+F1_000051 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] GoSub Tx_Line
+    rcall Tx_Line
+F1_000052 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] sTx = "T2 RC6->RB4 READ: " + Str$(Dec bW4) + Str$(Dec bW5) + Str$(Dec bW6) + "  (010 = WIRE1 FITTED)"
+    lfsr 0,sTx
+    movlw ((_strlb__3 >> 8) & 0xFF)
+    movwf TBLPTRLH
+    movlw (_strlb__3 & 0xFF)
+    movwf TBLPTRL
+    rcall __load_flashstring_to_RAM_
+    movlw 2
+    movwf BPFH
+    movlw 0
+    btfsc _B__VR1,3
+    movlw 1
+    rcall __dec__ASCII__outb
+    movlw 2
+    movwf BPFH
+    movlw 0
+    btfsc _B__VR1,4
+    movlw 1
+    rcall __dec__ASCII__outb
+    movlw 2
+    movwf BPFH
+    movlw 0
+    btfsc _B__VR1,5
+    movlw 1
+    rcall __dec__ASCII__outb
+    movlw ((_strlb__4 >> 8) & 0xFF)
+    movwf TBLPTRLH
+    movlw (_strlb__4 & 0xFF)
+    movwf TBLPTRL
+    rcall __load_flashstring_to_RAM_
+    clrf INDF0
+F1_000053 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] GoSub Tx_Line
+    bra Tx_Line
+Watch
+F1_000056 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] wLow5 = 0 : wLow7 = 0 : wN = 0
+    clrf wLow5H
+    clrf wLow5
+    clrf wLow7H
+    clrf wLow7
+    clrf wNH
+    clrf wN
+F1_000057 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Repeat
+_lbl__11
+F1_000058 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] if PORTB.5 = 0 Then Inc wLow5
+    movff PORTB,WREG
+    btfsc WREG,5
+    bra _lbl__15
+    infsnz wLow5,F
+    incf wLow5H,F
+_lbl__15
+F1_000059 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] if PORTC.7 = 0 Then Inc wLow7
+    movlb 0x01
+    rlcf PORTC,W
+    movlb 0x05
+    bc _lbl__17
+    infsnz wLow7,F
+    incf wLow7H,F
+_lbl__17
+F1_000060 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] While U2FIFO.1 = 0
+_lbl__18
+    movff U2FIFO,WREG
+    btfsc WREG,1
+    bra _lbl__19
+F1_000061 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] bChar = U2RXB
+    movff U2RXB,bChar
+F1_000062 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Wend
+    bra _lbl__18
+_lbl__19
+F1_000063 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Inc wN
+    infsnz wN,F
+    incf wNH,F
+F1_000064 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] DelayUs 5
+    movlw 26
+_pblb__20
+    decfsz WREG,F
+    bra _pblb__20
+    nop
+    nop
+_lbl__13
+F1_000065 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Until wN >= 20000
+    movlw 32
+    subwf wN,W
+    movlw 78
+    subwfb wNH,W
+    bnc _lbl__11
+_lbl__12
+F1_000066 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] sTx = "T3 low SAMPLES RB5=" + Str$(Dec wLow5) + " RC7=" + Str$(Dec wLow7) + "  (SIMILAR = WIRE2 FITTED)"
+    lfsr 0,sTx
+    movlw ((_strlb__5 >> 8) & 0xFF)
+    movwf TBLPTRLH
+    movlw (_strlb__5 & 0xFF)
+    movwf TBLPTRL
+    rcall __load_flashstring_to_RAM_
+    movlw 2
+    movwf BPFH
+    clrf GEN4H
+    movff wLow5H,PP2H
+    movff wLow5,PP2
+    rcall __dec__ASCII__out
+    movlw 32
+    movwf POSTINC0
+    movlw 82
+    movwf POSTINC0
+    movlw 67
+    movwf POSTINC0
+    movlw 55
+    movwf POSTINC0
+    movlw 61
+    movwf POSTINC0
+    movlw 2
+    movwf BPFH
+    clrf GEN4H
+    movff wLow7H,PP2H
+    movff wLow7,PP2
+    rcall __dec__ASCII__out
+    movlw ((_strlb__6 >> 8) & 0xFF)
+    movwf TBLPTRLH
+    movlw (_strlb__6 & 0xFF)
+    movwf TBLPTRL
+    rcall __load_flashstring_to_RAM_
+    clrf INDF0
+F1_000067 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] GoSub Tx_Line
+    bra Tx_Line
+Tx_Line
+F1_000070 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] bI = 0
+    clrf bI
+F1_000071 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] While bI < Len(sTx)
+_lbl__21
+    lfsr 0,sTx
+    movlw 0
+    movf POSTINC0,F
+    bz $ + 6
+    incfsz WREG,F
+    bra $ - 6
+    movwf PBS_VAR0
+    movf PBS_VAR0,W
+    cpfslt bI
+    bra _lbl__22
+F1_000072 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Repeat : Until U2FIFO.4 = 0
+_lbl__23
+    movff U2FIFO,WREG
+    btfsc WREG,4
+    bra _lbl__23
+_lbl__24
+F1_000073 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] U2TXB = sTx[bI]
+    lfsr 0,sTx
+    movf bI,W
+    movf PLUSW0,W
+    movlb 0x02
+    movwf U2TXB
+F1_000074 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Inc bI
+    incf bI,F
+F1_000075 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Wend
+    movlb 0x05
+    bra _lbl__21
+_lbl__22
+F1_000076 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Repeat : Until U2FIFO.4 = 0
+_lbl__26
+    movff U2FIFO,WREG
+    btfsc WREG,4
+    bra _lbl__26
+_lbl__27
+F1_000077 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] U2TXB = 13
+    movlb 0x02
+    movlw 13
+    movwf U2TXB
+F1_000078 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] Repeat : Until U2FIFO.4 = 0
+_lbl__29
+    movlb 0x05
+    movff U2FIFO,WREG
+    btfsc WREG,4
+    bra _lbl__29
+_lbl__30
+F1_000079 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] U2TXB = 10
+    movlb 0x02
+    movlw 10
+    movwf U2TXB
+F1_000080 equ $ ; in [CNANO_WIREDIAG_02102026_0010.BAS] return
+    movlb 0x05
+    return 0
+F1_EOF equ $ ; CNANO_WIREDIAG_02102026_0010.BAS
+_pblb__32
+    bra _pblb__32
+;---------------------------------------------
+__eof
+;---------------------------------------------
+; CONFIG FUSES
+config FEXTOSC = off
+config RSTOSC = HFINTOSC_64MHZ
+config CLKOUTEN = off
+config PR1WAY = off
+config CSWEN = on
+config BBEN = off
+config FCMEN = off
+config FCMENP = off
+config FCMENS = off
+config MCLRE = EXTMCLR
+config PWRTS = PWRT_64
+config MVECEN = off
+config IVT1WAY = off
+config LPBOREN = off
+config BOREN = SBORDIS
+config BORV = VBOR_2P45
+config ZCD = off
+config PPS1WAY = off
+config STVREN = on
+config LVP = on
+config XINST = off
+config DEBUG = off
+config WDTCPS = WDTCPS_31
+config WDTE = off
+config WDTCWS = WDTCWS_7
+config WDTCCS = SC
+config WRTB = off
+config WRTC = off
+config WRTD = off
+config WRTSAF = off
+config WRTAPP = off
+config CPD = off
+config CP = off
+    end
