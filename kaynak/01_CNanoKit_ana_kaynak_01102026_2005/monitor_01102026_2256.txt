@@ -1,0 +1,181 @@
+--- Curiosity kitinin portu seçildi: COM8 - Curiosity Virtual COM Port ---
+--- Curiosity kitinin portu seçildi: COM8 - Curiosity Virtual COM Port ---
+--- Curiosity kitinin portu seçildi: COM8 - Curiosity Virtual COM Port ---
+--- Kayıt dosyası: C:\Tarim\CNanoKit_01102026_2005\log\monitor_01102026_2256.txt ---
+[22:56:03.370] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A
+[22:56:03.873] Hello/Merhaba 5
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 0A
+[22:56:04.392] Hello/Merhaba 6
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 0A
+[22:56:04.897] Hello/Merhaba 7
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 0A
+[22:56:05.406] Hello/Merhaba 8
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 0A
+[22:56:05.941] Hello/Merhaba 9
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 0A
+[22:56:06.445] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:06.983] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:07.489] Hello/Merhaba 2
+[22:56:07.995] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 
+[22:56:07.996] 0A 
+[22:56:08.531] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 
+[22:56:08.532] 0A 
+[22:56:09.036] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 
+[22:56:09.036] 0A 
+[22:56:09.571] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 
+[22:56:09.571] 0A 
+[22:56:10.075] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 
+[22:56:10.075] 0A 
+[22:56:10.582] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 
+[22:56:10.582] 0A 
+[22:56:11.119] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 
+[22:56:11.119] 0A 
+[22:56:11.626] Hello/Merhaba 0
+[22:56:12.147] Hello/Merhaba 1
+[22:56:12.681] Hello/Merhaba 2
+[22:56:13.184] Hello/Merhaba 3
+[22:56:13.689] Hello/Merhaba 4
+[22:56:14.229] Hello/Merhaba 5
+[22:56:14.851] Hello/Merhaba 6
+[22:56:15.256] Hello/Merhaba 7
+[22:56:15.760] 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 
+[22:56:15.760] 0A 
+[22:56:16.264] Hello/Merhaba 9
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 0A
+[22:56:16.817] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:17.322] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:17.829] Hello/Merhaba 2
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 32 0D 0A
+[22:56:18.367] Hello/Merhaba 3
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 0A
+[22:56:18.873] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A
+[22:56:19.375] Hello/Merhaba 5
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 0A
+[22:56:19.915] Hello/Merhaba 6
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 0A
+[22:56:20.419] Hello/Merhaba 7
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 0A
+[22:56:20.948] Hello/Merhaba 8
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 0A
+[22:56:21.478] Hello/Merhaba 9
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 0A
+[22:56:21.984] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:22.485] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:23.027] Hello/Merhaba 2
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 32 0D 0A
+[22:56:23.529] Hello/Merhaba 3
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 0A
+[22:56:24.053] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A
+[22:56:24.558] Hello/Merhaba 5
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 0A
+[22:56:25.065] Hello/Merhaba 6
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 0A
+[22:56:25.587] Hello/Merhaba 7
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 0A
+[22:56:26.123] Hello/Merhaba 8
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 0A
+[22:56:26.628] Hello/Merhaba 9
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 0A
+[22:56:27.165] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:27.672] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:28.194] Hello/Merhaba 2
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 32 0D 0A
+[22:56:28.701] Hello/Merhaba 3
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 0A
+[22:56:29.206] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A
+[22:56:29.728] Hello/Merhaba 5
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 0A
+[22:56:30.236] Hello/Merhaba 6
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 0A
+[22:56:30.774] Hello/Merhaba 7
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 0A
+--- PIC resetleniyor... ---
+[22:56:31.281] Hello/Merhaba 8
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 0A
+[22:56:31.804] Hello/Merhaba 9
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 0A
+[22:56:32.341] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:32.846] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:33.813] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:34.347] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:34.853] Hello/Merhaba 2
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 32 0D 0A
+[22:56:35.392] Hello/Merhaba 3
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 0A
+[22:56:35.898] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A
+[22:56:36.435] Hello/Merhaba 5
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 0A
+[22:56:36.940] SW0
+               HEX: 53 57 30 0D 0A
+[22:56:36.952] Hello/Merhaba 6
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 0A
+[22:56:37.448] Hello/Merhaba 7
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 0A
+[22:56:37.956] Hello/Merhaba 8
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 0A
+[22:56:38.479] Hello/Merhaba 9
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 0A
+[22:56:38.986] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:39.502] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:40.030] Hello/Merhaba 2
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 32 0D 0A
+--- PIC resetleniyor... ---
+[22:56:40.566] Hello/Merhaba 3
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 0A
+[22:56:41.071] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A
+[22:56:41.581] Hello/Merhaba 5
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 0A
+[22:56:42.116] Hello/Merhaba 6
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 0A
+[22:56:42.621] Hello/Merhaba 7
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 0A
+[22:56:44.070] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:44.088] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:44.339] Hello/Merhaba 2
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 32 0D 0A
+[22:56:44.843] Hello/Merhaba 3
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 0A
+[22:56:45.399] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A
+[22:56:45.875] Hello/Merhaba 5
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 35 0D 0A
+[22:56:46.411] Hello/Merhaba 6
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 36 0D 0A
+[22:56:46.920] Hello/Merhaba 7
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 37 0D 0A
+[22:56:47.421] Hello/Merhaba 8
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 38 0D 0A
+[22:56:47.961] Hello/Merhaba 9
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 39 0D 0A
+[22:56:48.468] Hello/Merhaba 0
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 30 0D 0A
+[22:56:48.976] Hello/Merhaba 1
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 31 0D 0A
+[22:56:49.497] Hello/Merhaba 2
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 32 0D 0A
+[22:56:50.037] Hello/Merhaba 3
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 33 0D 0A
+[22:56:50.559] Hello/Merhaba 4
+               HEX: 48 65 6C 6C 6F 2F 4D 65 72 68 61 62 61 20 34 0D 0A

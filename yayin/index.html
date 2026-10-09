@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CNanoKit – PIC18F56Q71 Curiosity Nano + Positron8</title>
+<meta name="description" content="One-key compile, program and serial monitor for the PIC18F56Q71 Curiosity Nano from Positron Studio, Proton IDE or VS Code. No MPLAB X, no wires, no bootloader.">
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--fg:#1c2330;--mut:#5b6575;--acc:#c8102e;--acc2:#0b5cad;--line:#e2e6ec;--code:#eef1f5}
+@media (prefers-color-scheme:dark){:root{--bg:#11151b;--card:#19202a;--fg:#e6eaf0;--mut:#9aa5b5;--acc:#ff4d63;--acc2:#5aa7ff;--line:#2a3340;--code:#222b37}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--acc2)}
+header{background:linear-gradient(135deg,#7a0a1c,#c8102e);color:#fff;padding:48px 16px 40px}
+.w{max-width:1040px;margin:0 auto;padding:0 16px}
+header h1{margin:0 0 8px;font-size:clamp(26px,4vw,40px);line-height:1.2}
+header p{margin:0 0 20px;font-size:18px;opacity:.95;max-width:760px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;text-decoration:none;margin:4px 8px 4px 0}
+.btn.p{background:#fff;color:#7a0a1c}.btn.s{border:1px solid rgba(255,255,255,.7);color:#fff}
+nav{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);z-index:5}
+nav .w{display:flex;gap:18px;overflow-x:auto;padding:10px 16px;white-space:nowrap}
+nav a{color:var(--fg);text-decoration:none;font-size:15px}nav a:hover{color:var(--acc)}
+section{padding:36px 0;border-bottom:1px solid var(--line)}
+h2{font-size:26px;margin:0 0 16px}h3{margin:0 0 6px;font-size:18px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card p{margin:0;color:var(--mut)}
+kbd,code{background:var(--code);border-radius:4px;padding:1px 6px;font-family:Consolas,monospace;font-size:14px}
+ol li,ul li{margin:6px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--code)}
+.vid{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000;margin-bottom:10px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.note{border-left:4px solid var(--acc2);background:var(--card);padding:12px 16px;border-radius:6px}
+footer{padding:28px 0;color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<header><div class="w">
+<h1>CNanoKit</h1>
+<p>Compile, program and talk to Microchip's <b>PIC18F56Q71 Curiosity Nano (EV01G21A)</b> with one key – from <b>Positron Studio</b>, <b>Proton IDE</b> or <b>VS Code</b>. No MPLAB X, no programmer, no wires, no bootloader.</p>
+<a class="btn p" href="https://github.com/onderk/CNanoKit/releases/latest">⬇ Download CNanoKit</a> <a class="btn s" href="https://protoncompiler.com/index.php/topic,3440.0.html">💬 Forum topic</a>
+<a class="btn s" href="#start">Quick start</a>
+<a class="btn s" href="#videos">Videos</a>
+</div></header>
+<nav><div class="w"><a href="#what">What it does</a><a href="#need">What you need</a><a href="#start">Quick start</a><a href="#keys">Keys</a><a href="#videos">Videos</a><a href="#jonw">JonW bootloader</a><a href="#faq">FAQ</a><a href="#tr">Türkçe</a></div></nav>
+
+<section id="what"><div class="w">
+<h2>What it does</h2>
+<div class="grid">
+<div class="card"><h3>One key</h3><p>Compiles with Positron8, then writes, verifies and resets the kit through the kit's own on-board debugger (Microchip's free pymcuprog).</p></div>
+<div class="card"><h3>Safe</h3><p>Checks that the PIC on the kit matches your <code>Device =</code> line before it writes anything.</p></div>
+<div class="card"><h3>CNano Monitor</h3><p>Serial monitor for the kit's USB port: Text / HEX view and send, quick buttons, Reset PIC, log file, English / Turkish.</p></div>
+<div class="card"><h3>No wires</h3><p>Your program uses UART2 (RB4 = TX, RB5 = RX), already connected inside the kit to its USB port.</p></div>
+<div class="card"><h3>Three examples</h3><p><b>HELLO</b> (text + LED), <b>HELLO_NOLED</b> (text only), <b>KOMUT</b> (the PIC obeys commands from the PC).</p></div>
+<div class="card"><h3>Not included</h3><p>Breakpoint debugging (use MPLAB X for that). Only the 18F56Q71 kit is tested.</p></div>
+</div></div></section>
+
+<section id="need"><div class="w">
+<h2>What your PC needs (tested versions)</h2>
+<table>
+<tr><th>Item</th><th>Tested version</th></tr>
+<tr><td>Windows 10 / 11, 64-bit</td><td>Windows 11 Pro</td></tr>
+<tr><td>Positron8 compiler</td><td>4.0.6.4</td></tr>
+<tr><td>One IDE</td><td>Positron Studio 2.1.0.4 · Proton IDE 2.0.3.3 · VS Code 1.140 + “Positron” extension by atomix 2.9.0</td></tr>
+<tr><td>Python 3, 64-bit (tick “Add python.exe to PATH”)</td><td>3.14.7</td></tr>
+<tr><td>Installed once by the setup (internet)</td><td>Microchip pymcuprog 3.19 · Microchip PIC18F-Q device pack 1.31</td></tr>
+<tr><td>The kit + a USB <b>data</b> cable (Micro-B)</td><td>EV01G21A</td></tr>
+</table>
+<p class="note">Not needed: MPLAB X / IPE, a PICkit, wires, a bootloader, any driver (Windows recognises the kit by itself).</p>
+</div></section>
+
+<section id="start"><div class="w">
+<h2>Quick start</h2>
+<ol>
+<li>Download the zip. <b>Before unzipping:</b> right-click → Properties → tick <b>Unblock</b> → OK.</li>
+<li>Unzip to <code>C:\CNanoKit</code>.</li>
+<li>Close your IDEs and double-click <code>CNanoProg_Setup.bat</code> (internet needed once).</li>
+<li>Plug in the kit. A drive called <b>CURIOSITY</b> and a “Curiosity Virtual COM Port” appear.</li>
+<li>Open <code>C:\CNanoKit\examples\CNANO_HELLO_56Q71.bas</code>, compile + program (see the keys below).</li>
+<li>Open the monitor, click <b>Connect</b>: “Hello/Merhaba n” lines arrive every 500 ms.</li>
+</ol>
+<p>Full guide inside the zip: <code>docs\INSTALL_EN_*.md</code> · new PC step by step: <code>docs\NEW_PC_SETUP_EN_*.md</code></p>
+</div></section>
+
+<section id="keys"><div class="w">
+<h2>Keys and buttons</h2>
+<table>
+<tr><th>IDE</th><th>Compile + program</th><th>Monitor</th></tr>
+<tr><td>Positron Studio</td><td><kbd>F10</kbd></td><td>Tools → CNano Monitor</td></tr>
+<tr><td>Proton IDE</td><td>“Program (CNanoProg)” button</td><td>“Monitor (CNanoMonitor)” button</td></tr>
+<tr><td>VS Code</td><td><kbd>Ctrl+Alt+M</kbd> – or <kbd>Ctrl+Alt+C</kbd> then <kbd>Ctrl+Alt+P</kbd> (P alone does not compile)</td><td><kbd>Ctrl+Alt+N</kbd></td></tr>
+</table>
+</div></section>
+
+<section id="videos"><div class="w">
+<h2>Videos (English captions)</h2>
+<div class="grid">
+<div><span class="tag">Positron Studio</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/5oV3hNFtrQQ" title="HELLO in Positron Studio" allowfullscreen></iframe></div><h3>HELLO – one key (F10)</h3></div>
+<div><span class="tag">Positron Studio</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/Fr_1ISsT9pI" title="HELLO_NOLED in Positron Studio" allowfullscreen></iframe></div><h3>HELLO_NOLED – text only</h3></div>
+<div><span class="tag">Positron Studio</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/_-PZj2wlwPs" title="KOMUT in Positron Studio" allowfullscreen></iframe></div><h3>KOMUT – control the PIC from the PC</h3></div>
+<div><span class="tag">Proton IDE</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/HoQPmnRP7GU" title="HELLO in Proton IDE" allowfullscreen></iframe></div><h3>HELLO – Program and Monitor buttons</h3></div>
+<div><span class="tag">Proton IDE</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/7u8eBAA3DyQ" title="HELLO_NOLED in Proton IDE" allowfullscreen></iframe></div><h3>HELLO_NOLED</h3></div>
+<div><span class="tag">Proton IDE</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/cnKvcF5cFHo" title="KOMUT in Proton IDE" allowfullscreen></iframe></div><h3>KOMUT</h3></div>
+<div><span class="tag">VS Code</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/9kIeRDDFuoc" title="HELLO in VS Code" allowfullscreen></iframe></div><h3>HELLO – compile, program, monitor</h3></div>
+<div><span class="tag">VS Code</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/gBkqgx5eyXM" title="HELLO_NOLED in VS Code" allowfullscreen></iframe></div><h3>HELLO_NOLED</h3></div>
+<div><span class="tag">VS Code</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/dkm4jyVHdmw" title="KOMUT in VS Code" allowfullscreen></iframe></div><h3>KOMUT</h3></div>
+<div><span class="tag">Tool</span><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/-UH7H_6zfKo" title="CNano Monitor tour" allowfullscreen></iframe></div><h3>CNano Monitor tour</h3></div>
+</div></div></section>
+
+<section id="jonw"><div class="w">
+<h2>JonW's mwboot bootloader on this kit</h2>
+<p>JonW's free FREELOADER / mwboot bootloader also runs on this kit – separate from CNanoKit, with two wires (<b>RC6 → RB4</b>, <b>RB5 → RC7</b>). Get his files only from his forum topic: <a href="https://protoncompiler.com/index.php/topic,3427.0.html">protoncompiler.com – FREELOADER</a>.</p>
+<div class="grid"><div><a href="images/Wiring_JonW_mwboot_TR_04102026_1815.png"><img src="images/Wiring_JonW_mwboot_TR_04102026_1815.png" alt="Wiring for JonW's mwboot: RC6 to RB4, RB5 to RC7" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--line)"></a><p class="note">Wiring diagram (Turkish labels): wire 1 = RC6 → RB4, wire 2 = RB5 → RC7, holes counted from the USB end. Pinout: Microchip (DS50003481A); wires added by okmn.</p></div>
+<div><a href="images/Kit_wiring_photo_04102026_1815.png"><img src="images/Kit_wiring_photo_04102026_1815.png" alt="The two wires on the kit" style="width:100%;height:auto;border-radius:10px;border:1px solid var(--line)"></a><p class="note">The two wires on a real kit. Fit or remove them with USB unplugged.</p></div></div>
+<p class="note">Status: the bootloader works on a real PIC18F56Q71 (upload, verify, full read-back). FREELOADER.exe 1.1 cannot connect through the kit's USB port yet, because the kit passes data only while DTR is on – JonW will add an option for that.</p>
+<div class="grid">
+<div><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/DtCk0OLhyhg" title="Part 1: upload through the bootloader" allowfullscreen></iframe></div><h3>Part 1 – Upload through the bootloader</h3></div>
+<div><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/RV5UpDS18VI" title="Part 2: read-back" allowfullscreen></iframe></div><h3>Part 2 – Reading the whole chip back</h3></div>
+<div><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/Hw0ExDGAQg8" title="Part 3: FREELOADER and DTR" allowfullscreen></iframe></div><h3>Part 3 – FREELOADER 1.1 and DTR</h3></div>
+<div><div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/YuMxKAdu_NI" title="Part 4: test app" allowfullscreen></iframe></div><h3>Part 4 – The test app on its own</h3></div>
+</div></div></section>
+
+<section id="faq"><div class="w">
+<h2>FAQ</h2>
+<p><b>Ctrl+Alt+M does nothing in VS Code.</b> Another program may own that key. Use <kbd>Ctrl+Alt+C</kbd> (compile), then <kbd>Ctrl+Alt+P</kbd> (program).</p>
+<p><b>“hex is older than the .bas”.</b> You programmed without compiling. Compile first.</p>
+<p><b>The monitor shows nothing.</b> Click Connect, keep “DTR on” ticked (the kit needs it), and make sure your program uses UART2 (RB4/RB5).</p>
+<p><b>Does programming erase my bootloader?</b> Yes – normal programming erases the whole chip.</p>
+</div></section>
+
+<section id="tr"><div class="w">
+<h2>Türkçe</h2>
+<p>CNanoKit, Microchip PIC18F56Q71 Curiosity Nano kitini Positron8 ile <b>Positron Studio (F10)</b>, <b>Proton IDE (Program düğmesi)</b> veya <b>VS Code (Ctrl+Alt+M)</b> üzerinden tek tuşla derleyip programlamanızı ve <b>CNano Monitor</b> ile USB üzerinden konuşmanızı sağlar. MPLAB X, programlayıcı, kablo ve bootloader gerekmez. Türkçe kılavuzlar zip içinde: <code>docs\KURULUM_TR_*.md</code>, <code>docs\YENI_PC_KURULUM_TR_*.md</code>.</p>
+</div></section>
+
+<footer><div class="w">
+CNanoKit © 2026 okmn – freeware: free to use, do not modify or redistribute modified versions (<a href="https://github.com/onderk/CNanoKit/blob/main/LICENSE.txt">LICENSE.txt</a>). No warranty. Positron8, Positron Studio, Proton IDE, VS Code, pymcuprog and Microchip are the products/trademarks of their owners. Feedback: <a href="https://protoncompiler.com/index.php/topic,3440.0.html">CNanoKit forum topic</a> (user okmn).
+</div></footer>
+</body>
+</html>
